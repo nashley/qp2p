@@ -291,7 +291,7 @@ async fn next_on_bi_streams(
                     Ok(Ok(WireMsg::EndpointEchoResp(_)))
                 );
 
-                let message = WireMsg::EndpointVerficationResp(verified);
+                let message = WireMsg::EndpointVerificationResp(verified);
                 message.write_to_stream(&mut send).await.ok()?;
                 trace!("Responded to Endpoint verification request");
                 Some(Bytes::new())
